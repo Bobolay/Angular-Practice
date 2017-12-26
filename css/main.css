@@ -1,0 +1,282 @@
+a {
+    cursor: pointer;
+}
+body {
+  font-size: 16px;
+}
+@media only screen and (min-width: 1400px) {
+  .container {
+    width: 1400px;
+  }
+}
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.main-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url("img/bg-cover.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  z-index: -1;
+}
+.main-bg:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: white;
+  padding: 10px 0;
+}
+.home-link {
+  float: left;
+  position: relative;
+}
+.home-link span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+}
+.home-link:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background-image: url("img/icons/home.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 6px;
+}
+.logo {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 50%;
+  transform: translate(-50%,0);
+  background-image: url("img/icons/icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.add-twit-btn {
+  float: right;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  width: 60px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: #1DA1F2;
+  line-height: 30px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.add-twit-btn:hover {
+  background-color: #186a9c;
+}
+.jumbotron.form-wrap {
+  background: transparent;
+}
+.form-bg {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  background-color: rgba(0,0,0,0.5);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.form-bg h2 {
+  color: white;
+}
+.form-bg label {
+  color: white;
+  opacity: 0.7;
+}
+.panel {
+  position: relative;
+  padding: 20px;
+}
+.profile-info {
+  position: relative;
+  background: white;
+  padding-top: 100px;
+}
+.profile-info:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  left: 0;
+  background: #1DA1F2;
+}
+.profile-info .name {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(black,0.7);
+}
+.statistic .float-left {
+  width: 50%;
+}
+.statistic span:first-child {
+  font-size: 12px;
+  color: #657786;
+  font-weight: 600;
+}
+.statistic span:last-child {
+  display: block;
+  font-size: 18px;
+  color: #1DA1F2;
+  font-weight: 600;
+}
+.twit-tape {
+  position: relative;
+  padding-top: 60px;
+}
+.user-twit {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  left: 0;
+  background: #E8F5FD;
+  padding-left: 60px;
+}
+.user-twit:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 10px;
+  left: 20px;
+  background-image: url("img/icons/user-twit.svg");
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.user-twit .form-control {
+  display: inline-block;
+}
+.user-twit .form-control:first-child {
+  width: calc(100% - 200px);
+  margin: 15px;
+}
+.user-twit .form-control:last-child {
+  width: 140px;
+  margin: 15px 0;
+}
+.twit {
+  position: relative;
+  padding: 20px 20px 20px 75px;
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.twit .avatar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 36px;
+  height: 36px;
+}
+.twit .name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.twit .name span {
+  font-weight: 400;
+  color: rgba(0,0,0,0.5);
+}
+.twit .name span.username:before {
+  content: '\0040';
+}
+.twit .name span.date:before {
+  content: '\2022';
+  margin: 0 10px;
+}
+.twit .text a:before {
+  content: '\0023';
+}
+.interactions {
+  list-style: none;
+  padding-left: 0;
+}
+ul.interactions li {
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+ul.interactions li:last-child {
+  margin-right: 0;
+}
+
+.icon-holder {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;  
+}
+.icon-holder img {
+  width: 100%;
+  height: 100%;
+}
+.icon-holder.active img:first-child {
+  display: none;
+}
+.icon-holder.not-active img:last-child {
+  display: none;
+}
+.like-number {
+  display: inline-block;
+}
+.user-wrap {
+  height: 200px;
+  background: grey;
+}
+.comments-wrap {
+  background: #E8F5FD;
+  padding: 20px;
+}
+.comments-wrap .title {
+  color: #1DA1F2;
+}
+.comments-wrap .comment {
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 10px;
+}
+.add-comment-form {
+  padding: 10px 0;
+}
+.add-comment-form input {
+  margin-bottom: 10px;
+}
