@@ -5,13 +5,12 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 <!-- Reset CSS -->
-<link rel="stylesheet" href="css/reset.scss" />
+<link rel="stylesheet" href="css/_reset.scss" />
 <!-- Main CSS -->
 <link rel="stylesheet" href="css/main.css" />
+
 </head>
 <body>
-
-<div>
 
 <div class="main-bg"></div>
     
@@ -24,7 +23,9 @@
   </div>
 </header>
 
+
 <!-- Home page -->
+
 <div class="container">
     <div class="row">
 
@@ -35,7 +36,7 @@
                 <div class="statistic clearfix">
                     <p class="float-left twits">
                         <span>Twits</span>
-                        <span>0</span>
+                        <span ng-bind="twitcount"></span>
                     </p>
                     <p class="float-left follows">
                         <span>Follows</span>
@@ -53,15 +54,16 @@
                 <!-- Do Your own twit -->
                 <div class="user-twit">
                     <form ng-submit="twitAdd()">
-                        <input class="form-control" ng-model="twitInput" type="text" placeholder="Що нового?">
+                        <input class="form-control" ng-model="twitInput" type="text" placeholder="Що нового?" required>
                         <input class="form-control" type="submit" value="Опублікувати">
                     </form>
                 </div>
                 <!-- Watch all twits -->
-                <div class="twit" ng-repeat="(key,twit) in twitList">
+                <div class="twit" ng-repeat="(key,twit) in twitList" ng-controller="twitCtrl">
                     <div class="avatar">
                         <img src="img/icons/man.svg" alt="">
                     </div>
+                    <!-- <a href="#/phones/{{phone.id}}" class="thumb"></a> -->
                     <p class="name">{{twit.firstname}} {{twit.lastname}}<span class="username">{{twit.username}}</span><span class="date">{{date | date:'yyyy-MM-dd'}}</span></p>
                     <p class="text" ng-bind="twit.twitText"></p>
                     <ul class="interactions">
@@ -83,30 +85,15 @@
                     <!-- Comment section -->
                     <div class="comments-wrap" ng-if="twit.comments">
                         <p class="title">Коментарі</p>
-                        <div ng-repeat="comment in twit.comments">
-                            <p class="comment">{{comment}}</p>
+                        <div class="comment" ng-repeat="comment in twit.comments">
+                            <p>{{comment}}</p>
                         </div>
                     </div>
                     <!-- Add comment to somebody's twit -->
-                    <form class="add-comment-form" ng-show="commentForm" ng-submit="commentAdd(key)">
-                        <input class="form-control" ng-model="commentInput" type="text" placeholder="Ваша думка з цього приводу...">
+                    <form class="add-comment-form" ng-show="commentForm" ng-submit="commentAdd()">
+                        <input class="form-control" ng-model="commentInput" type="text" placeholder="Ваша думка з цього приводу..." required>
                         <input class="form-control" type="submit" value="Опублікувати">
                     </form>
-
-                    <!-- <div ng-show="commentForm" ng-controller="CommentController as commentCtrl">
-                        <h3>Comments</h3>
-                        <ul>
-                            <li ng-repeat="comment in post.comments">
-                                "{{comment.body}}"
-                            </li>
-                        </ul>
-                        <form name="commentForm" ng-submit="commentForm.$valid && commentCtrl.addComment(post)" novalidate>
-                            <h4>Add Comment</h4>
-                            <textarea ng-model="commentCtrl.comment.body" cols="30" rows="10" required></textarea>
-                            <input type="submit" value="Submit" />
-                        </form>
-                    </div> -->
-
                 </div>
             </div>                
         </div>
@@ -115,10 +102,13 @@
     </div>
 </div>
 
-</div>
-
-<script src="js/lib/angular.min.js"></script>
-<script src="js/app.js"></script>
-<!-- <script src="js/controllers/QuestionController.js"></script> -->
 </body>
+
+<!-- Libraries -->
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/angular-route.min.js"></script>
+<!-- App scripts -->
+<script src="js/app.js"></script>
+<!-- <script src="js/config.js"></script> -->
+
 </html>

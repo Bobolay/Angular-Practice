@@ -1,8 +1,7 @@
 var twitterApp = angular.module('twitterApp', []);
 
-// Define the `PhoneListController` controller on the `phonecatApp` module
 twitterApp.controller('twitlistCtrl', function twitlistCtrl($scope) {
-
+  
   $scope.twitList = [
     {
       firstname: 'Roman',
@@ -27,15 +26,20 @@ twitterApp.controller('twitlistCtrl', function twitlistCtrl($scope) {
       username: 'Forest_without_F',
       twitText: 'Here is my shit-twit',
       like: {
-        votes: 0
+        votes: 2
       }
     }
   ];
   $scope.date = new Date();
   // Add Your own twit
   $scope.twitAdd = function() {
-    $scope.twitList.unshift({twitText:$scope.twitInput});
+    $scope.twitList.unshift({twitText:$scope.twitInput, like: {votes: 0}});
     $scope.twitInput = "";
+
+    $scope.twitcount = ProfileService.twitcount;
+    $scope.twitcount++;
+    console.log($scope.twitcount);
+
   };
   // Like on dislike twit
   $scope.doLike = function(key) {
@@ -48,28 +52,20 @@ twitterApp.controller('twitlistCtrl', function twitlistCtrl($scope) {
       twit_with_key.like.votes++;
     }
   };
-  // Show or hide comment input
-  $scope.commentForm = false;
-  $scope.toggleComment = function(key) {
-    // var twit_key = $scope.twitList[key];
-    // console.log(twit_key);
-    // twit_key.commentForm = !twit_key.commentForm;
+});
+
+twitterApp.controller('twitCtrl', function twitCtrl($scope) {
+  // Show comment input inside particular twit
+  $scope.toggleComment = function() {
     $scope.commentForm = !$scope.commentForm;
   };
-  // Add Your comment to twit
-  $scope.commentAdd = function(key) {
-    var twit_with_key = $scope.twitList[key];
-    twit_with_key.comments.push($scope.commentInput);
-    $scope.twitInput = "";
+  // Add comment to particular twit
+  $scope.commentAdd = function(post) {
+    if (!Array.isArray($scope.twit.comments)) {
+      $scope.twit.comments = [];
+    }
+    $scope.twit.comments.push($scope.commentInput);
+    $scope.commentInput = "";
   };
 
 });
-
-// twitterApp.controller('CommentController', function(){
-//   this.comment = {};
-//   this.addComment = function(post){
-//     this.comment.createdOn = Date.now();
-//     post.comments.push(this.comment);
-//     this.comment ={};
-//   };
-// });

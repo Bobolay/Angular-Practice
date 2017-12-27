@@ -3,6 +3,8 @@ a {
 }
 body {
   font-size: 16px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 @media only screen and (min-width: 1400px) {
   .container {
@@ -22,12 +24,12 @@ body {
   float: right;
 }
 .main-bg {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
-  background-image: url("img/bg-cover.jpg");
+  background-image: url("/img/bg-cover.jpg");
   -webkit-background-size: cover;
   background-size: cover;
   z-index: -1;
@@ -49,6 +51,11 @@ header {
   left: 0;
   background: white;
   padding: 10px 0;
+  z-index: 1;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 2px 13px -5px #1DA1F2;
+  -moz-box-shadow: 0 2px 13px -5px #1DA1F2;
+  box-shadow: 0 2px 13px -5px #1DA1F2;
 }
 .home-link {
   float: left;
@@ -65,7 +72,7 @@ header {
   vertical-align: middle;
   width: 30px;
   height: 30px;
-  background-image: url("img/icons/home.svg");
+  background-image: url("/img/icons/home.svg");
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 6px;
@@ -76,7 +83,7 @@ header {
   height: 30px;
   left: 50%;
   transform: translate(-50%,0);
-  background-image: url("img/icons/icon.svg");
+  background-image: url("/img/icons/icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -159,12 +166,12 @@ header {
 }
 .twit-tape {
   position: relative;
-  padding-top: 60px;
+  padding-top: 70px;
 }
 .user-twit {
   position: absolute;
   width: 100%;
-  height: 60px;
+  height: 70px;
   top: 0;
   left: 0;
   background: #E8F5FD;
@@ -176,9 +183,9 @@ header {
   position: absolute;
   width: 36px;
   height: 36px;
-  top: 10px;
+  top: 17px;
   left: 20px;
-  background-image: url("img/icons/user-twit.svg");
+  background-image: url("/img/icons/user-twit.svg");
   -webkit-background-size: contain;
   background-size: contain;
   background-position: center;
@@ -269,10 +276,13 @@ ul.interactions li:last-child {
 .comments-wrap .title {
   color: #1DA1F2;
 }
-.comments-wrap .comment {
+.comments-wrap .comment p {
   font-size: 14px;
   border-bottom: 1px solid rgba(0,0,0,0.1);
   padding-bottom: 10px;
+}
+.comments-wrap .comment:last-child p {
+  border-bottom: 0;
 }
 .add-comment-form {
   padding: 10px 0;
