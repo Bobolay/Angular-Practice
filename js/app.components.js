@@ -10,12 +10,13 @@ homepage.controller('twitlistCtrl', function twitlistCtrl($scope, $http) {
   $http({method: 'GET', url: 'db.json'}).
     then(function success(response) {
         $scope.twitList=response.data.twits;
+        // $scope.twitList=response.data.users;
   });
 
   var current_date = new Date();
   // Add Your own twit
   $scope.twitAdd = function() {
-    $scope.twitList.unshift({twitText:$scope.twitInput, like: {votes: 0}, date: current_date});
+    $scope.twitList.unshift({firstname: "Firstname", lastname: "Lastname", username: "username", twitText:$scope.twitInput, like: {votes: 0}, date: current_date});
     $scope.twitInput = "";
 
   };
