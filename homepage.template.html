@@ -1,0 +1,77 @@
+<!-- Home page -->
+
+<div class="container">
+    <div class="row">
+
+        <!-- Profile short info -->
+        <div class="col-sm-4 col-md-3 col-xlg-2">
+            <div class="panel profile-info">
+                <p class="name">Name</p>
+                <div class="statistic clearfix">
+                    <p class="float-left twits">
+                        <span>Twits</span>
+                        <span>0</span>
+                    </p>
+                    <p class="float-left follows">
+                        <span>Follows</span>
+                        <span>1</span>
+                    </p>
+                    <input id="users-online" type="checkbox" checked data-toggle="toggle">
+                    <label for="users-online">Переглянути користувачів онлайн</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Twits container -->
+        <div class="col-sm-8 col-md-9">
+            <div class="twit-tape" ng-controller="twitlistCtrl">
+                <!-- Do Your own twit -->
+                <div class="user-twit">
+                    <form ng-submit="twitAdd()">
+                        <input class="form-control" ng-model="twitInput" type="text" placeholder="Що нового?" required>
+                        <input class="form-control" type="submit" value="Опублікувати">
+                    </form>
+                </div>
+                <!-- Watch all twits -->
+                <div class="twit" ng-repeat="(key,twit) in twitList | orderBy:'date'" ng-controller="twitCtrl">
+                    <div class="avatar">
+                        <img src="img/icons/man.svg" alt="">
+                    </div>
+                    <!-- <a href="#/phones/{{phone.id}}" class="thumb"></a> -->
+                    <p class="name"><a href="#/userpage/{{phone.id}}">{{twit.firstname}} {{twit.lastname}}</a><span class="username">{{twit.username}}</span><span class="date">{{twit.date | date:'yyyy-MM-dd'}}</span></p>
+                    <p class="text" ng-bind="twit.twitText"></p>
+                    <ul class="interactions">
+                        <!-- Show input for comment -->
+                        <li ng-click="toggleComment(key)">
+                            <span class="icon-holder">
+                                <img src="img/icons/comment.svg" alt="">
+                            </span>
+                        </li>
+                        <!-- Like or dislike -->
+                        <li ng-click="doLike(key)">
+                            <span class="icon-holder" ng-class="(twit.like.userVotes==1) ? 'active' : 'not-active'">
+                                <img src="img/icons/like.svg" alt="">
+                                <img src="img/icons/like-active.svg" alt="">
+                            </span>
+                            <span class="like-number" ng-model="twit.like.votes">{{twit.like.votes}}</span>
+                        </li>
+                    </ul>
+                    <!-- Comment section -->
+                    <div class="comments-wrap" ng-if="twit.comments">
+                        <p class="title">Коментарі</p>
+                        <div class="comment" ng-repeat="comment in twit.comments">
+                            <p>{{comment}}</p>
+                        </div>
+                    </div>
+                    <!-- Add comment to somebody's twit -->
+                    <form class="add-comment-form" ng-show="commentForm" ng-submit="commentAdd()">
+                        <input class="form-control" ng-model="commentInput" type="text" placeholder="Ваша думка з цього приводу..." required>
+                        <input class="form-control" type="submit" value="Опублікувати">
+                    </form>
+                </div>
+            </div>                
+        </div>
+        <!-- Twits container end -->
+
+    </div>
+</div>

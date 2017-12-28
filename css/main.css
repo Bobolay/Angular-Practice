@@ -6,6 +6,26 @@ body {
   padding-top: 100px;
   padding-bottom: 100px;
 }
+.main-content:before,
+.main-content:after {
+  content: '';
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.main-content:before {
+  background-image: url("/img/bg-cover.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.main-content:after {
+  background: rgba(0,0,0,0.7);
+}
 @media only screen and (min-width: 1400px) {
   .container {
     width: 1400px;
@@ -23,7 +43,7 @@ body {
 .float-right {
   float: right;
 }
-.main-bg {
+/*.main-bg {
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -33,8 +53,8 @@ body {
   -webkit-background-size: cover;
   background-size: cover;
   z-index: -1;
-}
-.main-bg:before {
+}*/
+/*.main-bg:before {
   content: '';
   display: block;
   position: absolute;
@@ -43,7 +63,7 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(0,0,0,0.7);
-}
+}*/
 header {
   position: fixed;
   width: 100%;
@@ -140,7 +160,7 @@ header {
   display: block;
   position: absolute;
   width: 100%;
-  height: 80px;
+  height: 70px;
   top: 0;
   left: 0;
   background: #1DA1F2;
@@ -166,10 +186,9 @@ header {
 }
 .twit-tape {
   position: relative;
-  padding-top: 70px;
 }
 .user-twit {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 70px;
   top: 0;

@@ -1,5 +1,7 @@
 var twitterApp = angular.module('twitterApp', [
-  'homepage'
+  'ngRoute',
+  'homepage',
+  'userpage'
 ]);
 
 // var twitterApp = angular.module('twitterApp', []);

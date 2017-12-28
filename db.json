@@ -1,0 +1,109 @@
+{
+  "twits": [
+    {
+      "id": 1,
+      "firstname": "Roman",
+      "lastname": "Grebyn",
+      "username": "Photomaster",
+      "date": "09/10/2017",
+      "twitText": "So, to create the layout you want, create a container",
+      "like": {
+        "votes": 1
+      },
+      "comments": ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos possimus porro earum dolor sint fuga laborum velit laudantium distinctio quos sunt veritatis unde inventore, autem ad tenetur voluptatibus mollitia vel!", "Hi. Im second comment"]
+    }, {
+      "id": 2,
+      "firstname": "Nazar",
+      "lastname": "Hativ",
+      "username": "Serviceauto",
+      "date": "19/11/2017",
+      "twitText": "Hi world!!!",
+      "like": {
+        "votes": 0
+      }
+    }, {
+      "id": 3,
+      "firstname": "Orest",
+      "lastname": "Markovskiy",
+      "username": "Forest_without_F",
+      "date": "15/08/2017",
+      "twitText": "Here is my shit-twit",
+      "like": {
+        "votes": 2
+      }
+    }, {
+      "id": 1,
+      "firstname": "Roman",
+      "lastname": "Grebyn",
+      "username": "Photomaster",
+      "date": "24/08/2017",
+      "twitText": "Some random text goes here",
+      "like": {
+        "votes": 4
+      },
+      "comments": ["I cant say this is smart comment"]
+    }, {
+      "id": 2,
+      "firstname": "Nazar",
+      "lastname": "Hativ",
+      "username": "Serviceauto",
+      "date": "01/09/2017",
+      "twitText": "Dignissimos possimus porro earum dolor sint fuga laborum velit laudantium distinctio quos sunt veritatis unde inventore, autem ad tenetur voluptatibus mollitia vel!",
+      "like": {
+        "votes": 3
+      }
+    }, {
+      "id": 3,
+      "firstname": "Orest",
+      "lastname": "Markovskiy",
+      "username": "Forest_without_F",
+      "date": "17/10/2017",
+      "twitText": "In the following you’ll lean how to setup JSON server and publish a sample REST API. Furthermore you’ll see how to use another library, Faker.js, to generate fake data for the REST API which is exposed by using JSON server.",
+      "like": {
+        "votes": 11
+      }
+    }, {
+      "id": 1,
+      "firstname": "Roman",
+      "lastname": "Grebyn",
+      "username": "Photomaster",
+      "date": "22/10/2017",
+      "twitText": "So, to create the layout you want, create a container",
+      "like": {
+        "votes": 4
+      },
+      "comments": ["JSON Server is available as a NPM package. The installation can be done by using the Node.js package manager", "Helpfull information"]
+    }, {
+      "id": 2,
+      "firstname": "Nazar",
+      "lastname": "Hativ",
+      "username": "Serviceauto",
+      "date": "27/11/2017",
+      "twitText": "CRUD entpoints are created automatically",
+      "like": {
+        "votes": 0
+      }
+    }, {
+      "id": 3,
+      "firstname": "Orest",
+      "lastname": "Markovskiy",
+      "username": "Forest_without_F",
+      "date": "02/09/2017",
+      "twitText": "This file contains the data which should be exposed by the REST API",
+      "like": {
+        "votes": 7
+      }
+    }, {
+      "id": 3,
+      "firstname": "Orest",
+      "lastname": "Markovskiy",
+      "username": "Forest_without_F",
+      "date": "03/11/2017",
+      "twitText": "Here is my shit-twit",
+      "like": {
+        "votes": 1
+      },
+      "comments": ["Package manager", "NPM package. The installation can be done by using the Node.js"]
+    }
+  ]
+}
