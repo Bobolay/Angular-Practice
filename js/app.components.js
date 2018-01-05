@@ -10,6 +10,7 @@ homepage.controller('twitlistCtrl', function twitlistCtrl($scope, $http) {
   $http({method: 'GET', url: 'db2.json'}).
     then(function success(response) {
       $scope.twitList = response.data;
+      $scope.showDiv = true;
   });
 
   var current_date = new Date();
@@ -27,8 +28,15 @@ homepage.controller('twitlistCtrl', function twitlistCtrl($scope, $http) {
       // date: current_date
     });
     $scope.twitInput = "";
-
   };
+
+  // Show users online
+  $scope.showOnline = function(){
+    angular.forEach($scope.twitList, function(){
+      $scope.showDiv = !$scope.showDiv;
+    });
+  }
+
   // Like on dislike twit
   $scope.doLike = function(key,hey) {
     var twit = $scope.twitList[key].twits[hey];

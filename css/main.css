@@ -302,6 +302,7 @@ ul.interactions li:last-child {
 }
 .comments-wrap .comment:last-child p {
   border-bottom: 0;
+  margin-bottom: 0;
 }
 .add-comment-form {
   padding: 10px 0;
