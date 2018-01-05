@@ -7,28 +7,37 @@ angular.
 homepage.controller('twitlistCtrl', function twitlistCtrl($scope, $http) {
   
   // Get all posts
-  $http({method: 'GET', url: 'db.json'}).
+  $http({method: 'GET', url: 'db2.json'}).
     then(function success(response) {
-        $scope.twitList=response.data.twits;
-        // $scope.twitList=response.data.users;
+      $scope.twitList = response.data;
   });
 
   var current_date = new Date();
   // Add Your own twit
   $scope.twitAdd = function() {
-    $scope.twitList.unshift({firstname: "Firstname", lastname: "Lastname", username: "username", twitText:$scope.twitInput, like: {votes: 0}, date: current_date});
+    $scope.twitList.unshift({
+      firstname: "Firstname",
+      lastname: "Lastname",
+      username: "username"
+      // twits: [
+
+      // ]
+      // twitText:$scope.twitInput,
+      // like: {votes: 0},
+      // date: current_date
+    });
     $scope.twitInput = "";
 
   };
   // Like on dislike twit
-  $scope.doLike = function(key) {
-    var twit_with_key = $scope.twitList[key];
-    if (twit_with_key.like.userVotes == 1) {
-      delete twit_with_key.like.userVotes;
-    twit_with_key.like.votes--;
+  $scope.doLike = function(key,hey) {
+    var twit = $scope.twitList[key].twits[hey];
+    if (twit.like.userVotes == 1) {
+      delete twit.like.userVotes;
+    twit.like.votes--;
     } else {
-      twit_with_key.like.userVotes = 1;
-      twit_with_key.like.votes++;
+      twit.like.userVotes = 1;
+      twit.like.votes++;
     }
   };
 });
@@ -40,10 +49,10 @@ homepage.controller('twitCtrl', function twitCtrl($scope) {
   };
   // Add comment to particular twit
   $scope.commentAdd = function(post) {
-    if (!Array.isArray($scope.twit.comments)) {
-      $scope.twit.comments = [];
+    if (!Array.isArray($scope.post.comments)) {
+      $scope.post.comments = [];
     }
-    $scope.twit.comments.push($scope.commentInput);
+    $scope.post.comments.push($scope.commentInput);
     $scope.commentInput = "";
   };
 

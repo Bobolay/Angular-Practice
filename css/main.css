@@ -309,3 +309,7 @@ ul.interactions li:last-child {
 .add-comment-form input {
   margin-bottom: 10px;
 }
+
+.dn {
+  display: none;
+}
