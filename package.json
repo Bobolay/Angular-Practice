@@ -1,0 +1,19 @@
+{
+  "name": "angular-practice",
+  "version": "1.0.0",
+  "description": "App with very basic functional like Twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bobolay/Angular-Practice.git"
+  },
+  "author": "Bohdan Ohirko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bobolay/Angular-Practice/issues"
+  },
+  "homepage": "https://github.com/Bobolay/Angular-Practice#readme"
+}

@@ -1,13 +1,9 @@
 angular.
   module('homepage').
-  component('homepage', {
-    templateUrl: 'homepage.template.html'
-})
-
-homepage.controller('twitlistCtrl', function twitlistCtrl($scope, $http) {
+  controller('twitlistCtrl', function twitlistCtrl($scope, $http) {
   
   // Get all posts
-  $http({method: 'GET', url: 'db2.json'}).
+  $http({method: 'GET', url: 'db.json'}).
     then(function success(response) {
       $scope.twitList = response.data;
       $scope.showDiv = true;
@@ -50,7 +46,9 @@ homepage.controller('twitlistCtrl', function twitlistCtrl($scope, $http) {
   };
 });
 
-homepage.controller('twitCtrl', function twitCtrl($scope) {
+angular.
+  module('homepage').
+  controller('twitCtrl', function twitCtrl($scope) {
   // Show comment input inside particular twit
   $scope.toggleComment = function() {
     $scope.commentForm = !$scope.commentForm;
@@ -65,9 +63,3 @@ homepage.controller('twitCtrl', function twitCtrl($scope) {
   };
 
 });
-
-angular.
-  module('userpage').
-  component('userpage', {
-    templateUrl: 'userpage.template.html'
-})

@@ -17,7 +17,7 @@
                         <span>1</span>
                     </p>
                     <input id="users-online" type="checkbox" data-toggle="toggle" ng-click="showOnline()">
-                    <label for="users-online">Переглянути користувачів онлайн</label>
+                    <label class="users-online" for="users-online">Переглянути користувачів онлайн</label>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                         <div class="avatar">
                             <img src="img/icons/man.svg" alt="">
                         </div>
-                        <p class="name"><a href="">{{twit.firstname}} {{twit.lastname}}</a><span class="username">{{twit.username}}</span><span class="date">{{post.date | date:'yyyy-MM-dd'}}</span></p>
+                        <p class="name"><a href="#/userpage/{{twit.id}}">{{twit.firstname}} {{twit.lastname}}</a><span class="username">{{twit.username}}</span><span class="date">{{post.date | date:'yyyy-MM-dd'}}</span></p>
                         <p class="text">{{post.twitText}}</p>
                         <ul class="interactions">
                             <!-- Show input for comment -->
